@@ -1,0 +1,18 @@
+# Protect config.php
+<Files "config.php">
+    Require all denied
+</Files>
+
+# Protect all .log files
+<FilesMatch "\.(log)$">
+    Require all denied
+</FilesMatch>
+
+# Disable directory listing
+Options -Indexes
+
+# Hide server signature
+ServerSignature Off
+
+# Log unauthorized access
+ErrorDocument 403 /403.html
